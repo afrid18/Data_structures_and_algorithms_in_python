@@ -1,6 +1,6 @@
 # Data Structures and Algorithms in Python
-[![Data Structures and Algorithms in Python](images/front.jpeg "BOOK")](https://www.amazon.in/Structures-Algorithms-Python-Michael-Goodrich/dp/1118290275/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1616846979&sr=8-5)
-[![Data Structures and Algorithms in Python](images/back.jpeg "BOOK")](https://www.amazon.in/Structures-Algorithms-Python-Michael-Goodrich/dp/1118290275/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1616846979&sr=8-5)
+[![Data Structures and Algorithms in Python](images/m_front.jpeg "BOOK")](https://www.amazon.in/Structures-Algorithms-Python-Michael-Goodrich/dp/1118290275/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1616846979&sr=8-5)
+[![Data Structures and Algorithms in Python](images/m_back.jpeg "BOOK")](https://www.amazon.in/Structures-Algorithms-Python-Michael-Goodrich/dp/1118290275/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1616846979&sr=8-5)
 
 
 ## Solutions of Data Structures and Algorithms in Python
