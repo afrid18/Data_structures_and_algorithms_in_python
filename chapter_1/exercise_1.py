@@ -75,4 +75,10 @@ def sum_of_odd(n):
             i += 2
         return total
 
+# R-1.7
+# sum_of_odd1 funtion in just one line
+
+
+def sum_of_odd(n):
+    return sum(i * i for i in range(1, n, 2))
 
