@@ -116,3 +116,99 @@ for i in range(50, 90, 10):
 
 for i in range(8, -9, -2):
     print(i)
+
+
+# R-1.11
+# Demonstrate how to use Python’s list comprehension syntax to produce the list [1, 2, 4, 8, 16, 32, 64, 128, 256].
+#
+
+a = [2 ** i for i in range(9)]
+print(a)
+
+
+
+# R-1.12
+#Python’s random module includes a function choice(data) that returns a random element from a non-empty sequence. The random module in- cludes a more basic function randrange, with parameterization similar to the built-in range function, that return a random choice from the given range. Using only the randrange function, implement your own version of the choice function.
+#
+
+
+import random
+
+# custom function to implement random.choice() function
+
+def choice1(data):
+    size = len(data)
+    return data[random.randrange(size)]
+
+a = [11,12,13,14,15,16]
+print(choice1(a))
+
+
+# R-1.13
+# Write a pseudo-code description of a function that reverses a list of n integers, so that the numbers are listed in the opposite order than they were before, and compare this method to an equivalent Python function for doing the same thing.
+
+# pseudo-code of a function to reverse the list
+
+
+data = [13, 15, 18, 33, 67, 98, 192, 234, 500, 789, 900]
+
+# pseudo-code as follows
+
+# 1 -> Loop
+    # 1.1 -> for ith element of the data swap ith and the size-i-1 th element
+    # 1.2 -> End loop
+# 2 -> Done
+
+
+# Python's built in function to implement the same using a single function is
+# data.reverse()
+# reverse() is a function that changes the contents of the actual values in the data sequence
+
+data.reverse()
+print(data)
+
+
+# R-1.14
+# Write a short Python function that takes a sequence of integer values and determines if there is a distinct pair of numbers in the sequence whose product is odd.
+#
+
+def odd_product(data):
+    size = len(data)
+    for i in range(size):
+        for j in range(size):
+            if(i == j):
+                continue
+            elif (data[i] * data[j]) % 2 == 1:
+                return i , j
+    print("None Found!")
+
+
+oddList = [2, 3, 4, 5]
+print(odd_product(oddList))                 # returns a tuple of (1,3) meaning oddList[1] multiplied by oddList[3] gives a odd number
+                                            #                       3 * 5 = 15 which is an odd number
+
+
+
+
+
+
+
+# R-1.5
+# Write a Python function that takes a sequence of numbers and determines if all the numbers are different from each other (that is, they are distinct).
+#
+
+def uniqueElements(data):
+    size = len(data)
+    for i in range(size):
+        for j in range(size):
+            if i == j:
+                continue
+            elif(data[i] == data[j]):
+                return False
+    return True
+
+uniqueEle = [1, 2, 4, 5, 6 ,7, 9]
+notUniEle = [1, 3, 5, 7, 9, 1, 2, 5, 8]
+
+print(uniqueElements(uniqueEle))
+print(uniqueElements(notUniEle))
