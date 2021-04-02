@@ -212,3 +212,133 @@ notUniEle = [1, 3, 5, 7, 9, 1, 2, 5, 8]
 
 print(uniqueElements(uniqueEle))
 print(uniqueElements(notUniEle))
+
+
+
+# R-1.6
+# In our implementation of the scale function (page25),the body of the loop executes the command data[j]   = factor. We have discussed that numeric types are immutable, and that use of the   = operator in this context causes the creation of a new instance (not the mutation of an existing instance). How is it still possible, then, that our implementation of scale changes the actual parameter sent by the caller?
+#
+
+# Solution: -> This is because the parameter to the scale function was a list type and the elements of the list are just referenced to the new elements
+
+# R-1.7
+# Had we implemented the scale function (page 25) as follows, does it work properly?
+"""
+def scale(data, factor):
+    for val in data:
+        val  * = factor
+Explain why or why not.
+"""
+
+# Solution ->
+# This wouldn't have worked. `val` is an alias to the actual element in `data` and assigning a new object to it will only change `val`'s value.
+
+
+
+# R-1.8
+# Demonstrate how to use Python’s list comprehension syntax to produce
+# The list [0, 2, 6, 12, 20, 30, 42, 56, 72, 90].
+
+
+# solution: This sequence is a pronic sequence that it is the product of two consecutive numbers
+
+a = [x * (x + 1) for x in range(10)]
+print(a)
+
+
+
+# R-1.9
+# Demonstrate how to use Python’s list comprehension syntax to produce thelist[ a , b , c ,..., z ],butwithouthavingtotypeall26such characters literally.
+#
+
+b = [chr(i) for i in range(ord('a'), ord('a') + 26)]
+print(b)
+
+
+# R-1.20
+# Python’s random module includes a function shuffle(data) that accepts a list of elements and randomly reorders the elements so that each possi- ble order occurs with equal probability. The random module includes a more basic function randint(a, b) that returns a uniformly random integer from a to b (including both endpoints). Using only the randint function, implement your own version of the shuffle function.
+#
+
+from random import randint
+
+def myshuffle(data):
+    for i in range(len(data) - 1, 0, -1):
+        j = randint(0, i)
+        data[i] , data[j] = data[j] , data[i]
+
+
+c = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+myshuffle(c)
+print(c)
+
+
+
+# R-1.21
+# Write a Python program that repeatedly reads lines from standard input until an EOFError is raised, and then outputs those lines in reverse order (a user can indicate end of input by typing ctrl-D).
+#
+
+try:
+    data = []
+    temp = input()
+    while temp:
+        data.append(temp)
+        temp = input()
+except EOFError:
+    while len(data) != 0:
+        print(data.pop())
+
+
+# R-1.22
+# Write a short Python program that takes two arrays a and b of length n storing int values, and returns the dot product of a and b. That is, it returns an array c of length n such that c[i] = a[i]·b[i], for i = 0,...,n−1.
+#
+
+a = [1, 3, 4, 5, 6, 8, 9]
+b = [2, 5, 8, 4, 6, 0, 3]
+c = []
+for i in range(0, len(a)):
+    c.append(a[i] * b[i])
+print(c)
+
+
+# R-1.23
+# Give an example of a Python code fragment that attempts to write an ele- ment to a list based on an index that may be out of bounds. If that index is out of bounds, the program should catch the exception that results, and print the following error message:
+# “Don’t try buffer overflow attacks in Python!”
+
+
+a = []
+try:
+    a[10] = 200
+except IndexError:
+    print('Don’t try buffer overflow attacks in Python!')
+
+
+
+
+# R-1.24
+# Write a short Python function that counts the number of vowels in a given
+# character string.
+
+
+def countVowels(string):
+    vowels = 0
+    for i in string:
+        if i in ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']:
+            vowels += 1
+    return vowels
+
+print(countVowels('AEIOUHHGGRRWWNNBBCCEEUUI'))
+
+
+# R-1.25
+# Write a short Python function that takes a strings, representing a sentence, and returns a copy of the string with all punctuation removed. For example, if given the string "Let s try, Mike.", this function would return "Lets try Mike"
+#
+
+def removePunc(string):
+    result = ''
+    for i in string:
+        if i not in [',', "'", '"', '!', '.']:
+            result = result + i
+    return result
+
+print(removePunc("Let's try, Mike."))
