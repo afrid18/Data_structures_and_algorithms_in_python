@@ -342,3 +342,51 @@ def removePunc(string):
     return result
 
 print(removePunc("Let's try, Mike."))
+
+
+
+# R-1.26
+# Write a short program that takes as input three integers, a, b, and c, from the console and determines if they can be used in a correct arithmetic formula (in the given order), like “a+b = c,” “a = b−c,” or “a∗b = c.”
+#
+
+def arithmetic_check():
+    result = []
+    a = int(input("Please Enter an Integer value:"))
+    b = int(input("Please Enter an Integer value:"))
+    c = int(input("Please Enter an Integer value:"))
+    if a + b == c:
+        result.append('a + b = c')
+    if a == b - c:
+        result.append('a = b - c')
+    if a * b == c:
+        result.append('a * b == c')
+    if result:
+        print('\n'.join(result))
+    else:
+        print("NO match found")
+
+arithmetic_check()
+
+
+
+# R-1.27
+# In Section 1.8, we provided three different implementations of a generator that computes factors of a given integer. The third of those implementa- tions, from page 41, was the most efficient, but we noted that it did not yield the factors in increasing order. Modify the generator so that it reports factors in increasing order, while maintaining its general performance ad- vantages.
+#
+from typing import List
+
+def factors(n:int) -> List[int]:
+    k = 1
+    while k ** 2 < n:
+        if n % k == 0:
+            yield k
+        k += 1
+    k = int(n ** (1/2))
+    while k > 0:
+        if n % k == 0:
+            yield n // k
+        k -= 1
+
+print(list(factors(100)))
+
+
+
