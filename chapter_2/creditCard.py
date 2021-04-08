@@ -17,7 +17,7 @@ class CreditCard:
         self._bank = bank
         self._account = acnt
         self._limit = limit
-        self._balance - 0
+        self._balance = 0
 
     def get_customer(self):
         """Return name of the customer"""
