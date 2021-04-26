@@ -42,3 +42,5 @@ class predatoryCreditCard(CreditCard):
             monthly_factor = pow(1 + self._apr, 1/12)
             self._balance *= monthly_factor
 
+
+# A little change never mind
