@@ -1,6 +1,6 @@
-import creditCard
+from creditCard import CreditCard
 
-class predatoryCreditCard(creditCard):
+class predatoryCreditCard(CreditCard):
     """An extension to the creditCard class, that compounds interest and fees"""
 
     def __init__(self, customer, bank, acnt, limit, apr):
