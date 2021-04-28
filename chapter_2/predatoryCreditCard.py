@@ -43,4 +43,4 @@ class predatoryCreditCard(CreditCard):
             self._balance *= monthly_factor
 
 
-# A little change never
+# A little change never mind
