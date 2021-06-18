@@ -4,7 +4,7 @@ C = [9, 0]
 
 
 
-def disjoint1(A, B, C):
+def disjoint1(A, B, C): # O(n^3)
     """Return True is A intersection B intersection C has none elements else return False"""
     for a in A:
         for b in B:
@@ -14,7 +14,7 @@ def disjoint1(A, B, C):
     return True
 
 
-def disjoint2(A, B, C):
+def disjoint2(A, B, C): # O(n^2)
     """Return True is A intersection B intersection C has none elements else return False"""
     for a in A:
         for b in B:
