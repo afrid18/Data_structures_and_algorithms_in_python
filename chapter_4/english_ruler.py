@@ -21,5 +21,4 @@ def draw_ruler(num_inches, major_length):
         draw_interval(major_length - 1)
         draw_line(major_length, str(j))
 
-
-draw_ruler(3,  100)
+draw_ruler(3,  4)
