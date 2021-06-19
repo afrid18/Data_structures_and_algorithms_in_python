@@ -22,4 +22,4 @@ def draw_ruler(num_inches, major_length):
         draw_line(major_length, str(j))
 
 
-draw_ruler(3,  999)
+draw_ruler(3,  100)
