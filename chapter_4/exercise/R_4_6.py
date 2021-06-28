@@ -1,3 +1,5 @@
+# Describe a recursive function for computing the nth Harmonic number, Hn = ∑ni=1 1/i.
+
 """ Recursive function to compute nth Harmonic number """
 
 def harmonic_recursive(n):
