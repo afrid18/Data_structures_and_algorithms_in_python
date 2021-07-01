@@ -35,5 +35,3 @@ class DynamicArray:
     def _make_array(self, c):
         """Return new array with capacity c"""
         return (c * ctypes.py_object)()
-
-
